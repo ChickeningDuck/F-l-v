@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Audió lejátszó QR-kóddal</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 60px;
+    }
+    audio {
+      width: 80%;
+      max-width: 400px;
+      margin: 20px auto;
+      display: block;
+    }
+    #qrcode {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎧 Fél éves versike</h2>
+
+  <!-- Audió lejátszó -->
+  <audio controls>
+    <source src="https://raw.githubusercontent.com/ChickeningDuck/F-l-v/main/F%C3%A9l%C3%A9ves%20Versike.m4a" type="audio/mp4">
+    A böngésződ nem támogatja az audió lejátszást.
+  </audio>
+
+  <!-- QR-kód -->
+  <h3>📱 Nyisd meg mobilról:</h3>
+  <div id="qrcode"></div>
+
+  <script>
+    // Ide írd be az oldalad URL-jét (GitHub Pages link!)
+    const pageUrl = window.location.href;
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: pageUrl,
+      width: 200,
+      height: 200
+    });
+  </script>
+
+</body>
+</html>
+
