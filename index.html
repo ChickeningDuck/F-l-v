@@ -6,7 +6,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     body {
-      font-family: Futura;
+      font-family: Futura, sans-serif;
       text-align: center;
       margin-top: 60px;
     }
@@ -18,6 +18,8 @@
     }
     #qrcode {
       margin-top: 10px;
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
@@ -31,23 +33,27 @@
     A böngésződ nem támogatja az audió lejátszást.
   </audio>
 
-
-  <h3></h3>
+  <!-- QR-kód -->
   <div id="qrcode"></div>
   
   <script>
-    // Ide írd be az oldalad URL-jét (GitHub Pages link!)
-    const pageUrl = "https://chickeningduck.github.io/F-l-v/"
+    const pageUrl = "https://chickeningduck.github.io/F-l-v/";
 
-    new QRCode(document.getElementById("qrcode"), {
-      text: pageUrl,
-      width: 100,
-      height: 100
-    });
+    // Ellenőrzés: ha a könyvtár betöltődött
+    if (typeof QRCode !== "undefined") {
+      new QRCode(document.getElementById("qrcode"), {
+        text: pageUrl,
+        width: 150,
+        height: 150
+      });
+    } else {
+      document.getElementById("qrcode").innerText = "⚠️ A QR-kód generátor nem töltődött be.";
+    }
   </script>
 
 </body>
 </html>
+
 
 
 
