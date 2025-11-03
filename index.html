@@ -6,7 +6,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Futura;
       text-align: center;
       margin-top: 60px;
     }
@@ -17,13 +17,13 @@
       display: block;
     }
     #qrcode {
-      margin-top: 30px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <h2>🎧 Fél éves versike</h2>
+  <h2>❤️Féléves versike❤️</h2>
 
   <!-- Audió lejátszó -->
   <audio controls>
@@ -32,7 +32,7 @@
   </audio>
 
   <!-- QR-kód -->
-  <h3>📱 Nyisd meg mobilról:</h3>
+  <h3></h3>
   <div id="qrcode"></div>
 
   <script>
@@ -41,12 +41,13 @@
 
     new QRCode(document.getElementById("qrcode"), {
       text: pageUrl,
-      width: 200,
-      height: 200
+      width: 20,
+      height: 20
     });
   </script>
 
 </body>
 </html>
+
 
 
